@@ -2,7 +2,6 @@ import './style.css';
 
 class Botao {
 	constructor() {
-		this.title = '';
 		this.callback = function () {};
 	}
 
@@ -14,9 +13,10 @@ class Botao {
 		this.callback = f;
 	}
 
-	render() {
+	criarBotao() {
 		let b = document.createElement('button');
-		b.classList.add('botao');
+		b.classList.add('btn');
+		b.innerHTML = this.title;
 		b.addEventListener('click', this.callback);
 
 		return b;
